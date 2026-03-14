@@ -14,7 +14,7 @@ import re
 import unicodedata
 from urllib.parse import quote
 
-from fastapi import FastAPI, HTTPException, Path as ApiPath, Query, Request
+from fastapi import FastAPI, Form, HTTPException, Path as ApiPath, Query, Request
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -105,14 +105,51 @@ def _is_local_client(request: Request) -> bool:
     return client_host in {"127.0.0.1", "::1", "localhost"}
 
 
+def _docs_admin_token() -> str:
+    return os.getenv("DOCS_ADMIN_TOKEN", "").strip()
+
+
+def _is_docs_admin_authorized(request: Request) -> bool:
+    token = _docs_admin_token()
+    if not token:
+        return _is_local_client(request)
+    supplied = request.headers.get("x-docs-admin-token", "").strip()
+    if supplied == token:
+        return True
+    cookie_token = request.cookies.get("docs_admin_token", "").strip()
+    return cookie_token == token
+
+
+def _render_docs_admin_login_page(message: str = "") -> str:
+    msg = f"<p style='color:#b42318;margin:0 0 12px;'>{html.escape(message)}</p>" if message else ""
+    return (
+        "<html><head><meta charset='utf-8'/>"
+        "<title>Docs Admin Login</title>"
+        "<style>"
+        "body{font-family:sans-serif;padding:24px;background:#f7f8fa;}"
+        "main{max-width:420px;margin:10vh auto;background:#fff;border:1px solid #d6dbe3;border-radius:16px;padding:24px;}"
+        "input,button{width:100%;box-sizing:border-box;margin:10px 0;padding:12px;border-radius:10px;border:1px solid #cbd5e1;}"
+        "button{background:#0f5cdd;color:#fff;border:none;cursor:pointer;}"
+        "p{line-height:1.5;color:#475467;}"
+        "</style>"
+        "</head><body><main>"
+        "<p><a href='/hub'>문서 허브</a></p>"
+        "<h1 style='margin-top:0;'>운영자 로그인</h1>"
+        "<p>`DOCS_ADMIN_TOKEN`이 설정된 환경입니다. 운영자 토큰으로 로그인해야 `/admin/docs`에 접근할 수 있습니다.</p>"
+        f"{msg}"
+        "<form method='post' action='/admin/docs/login'>"
+        "<input type='password' name='token' placeholder='Admin token' autocomplete='current-password' required />"
+        "<button type='submit'>로그인</button>"
+        "</form>"
+        "</main></body></html>"
+    )
+
+
 def _require_docs_admin(request: Request) -> None:
-    token = os.getenv("DOCS_ADMIN_TOKEN", "").strip()
-    if token:
-        supplied = request.headers.get("x-docs-admin-token", "").strip()
-        if supplied != token:
-            raise HTTPException(status_code=403, detail={"ok": False, "error_code": "FORBIDDEN", "message": "Admin token required"})
-        return
-    if not _is_local_client(request):
+    token = _docs_admin_token()
+    if token and not _is_docs_admin_authorized(request):
+        raise HTTPException(status_code=403, detail={"ok": False, "error_code": "FORBIDDEN", "message": "Admin token required"})
+    if not token and not _is_local_client(request):
         raise HTTPException(status_code=403, detail={"ok": False, "error_code": "FORBIDDEN", "message": "Admin route is restricted to local access"})
 
 
@@ -1147,9 +1184,50 @@ def docs_upload_page() -> str:
     summary="운영자 문서 관리 화면",
     description="문서 인덱스 상태와 재색인 기능을 제공하는 운영자 화면입니다.",
 )
-def docs_admin_page(request: Request) -> str:
+def docs_admin_page(request: Request) -> HTMLResponse:
+    if _docs_admin_token() and not _is_docs_admin_authorized(request):
+        return HTMLResponse(content=_render_docs_admin_login_page(), status_code=401)
     _require_docs_admin(request)
-    return DOC_SERVICE.render_admin_page()
+    return HTMLResponse(content=DOC_SERVICE.render_admin_page())
+
+
+@app.post(
+    "/admin/docs/login",
+    response_class=HTMLResponse,
+    tags=["docs-hub"],
+    summary="운영자 로그인",
+    description="운영자 토큰을 검증하고 브라우저 세션 쿠키를 설정합니다.",
+)
+async def docs_admin_login(request: Request, token: str = Form(...)) -> HTMLResponse:
+    expected = _docs_admin_token()
+    if not expected:
+        return HTMLResponse(content=DOC_SERVICE.render_admin_page())
+    if token.strip() != expected:
+        return HTMLResponse(content=_render_docs_admin_login_page("토큰이 올바르지 않습니다."), status_code=403)
+    response = RedirectResponse(url="/admin/docs", status_code=303)
+    response.set_cookie(
+        key="docs_admin_token",
+        value=expected,
+        httponly=True,
+        secure=request.url.scheme == "https",
+        samesite="lax",
+        max_age=60 * 60 * 8,
+        path="/",
+    )
+    return response
+
+
+@app.post(
+    "/admin/docs/logout",
+    response_class=HTMLResponse,
+    tags=["docs-hub"],
+    summary="운영자 로그아웃",
+    description="운영자 브라우저 세션 쿠키를 제거합니다.",
+)
+def docs_admin_logout() -> HTMLResponse:
+    response = RedirectResponse(url="/admin/docs", status_code=303)
+    response.delete_cookie(key="docs_admin_token", path="/")
+    return response
 
 
 @app.get(

@@ -456,7 +456,7 @@ class DocumentService:
             f"<div><strong>Hidden</strong><p>{summary['hidden_docs']}</p></div>"
             f"<div><strong>Last Indexed</strong><p>{html.escape(self._format_kst(summary['last_indexed_at']))}</p></div>"
             "</div></section>"
-            "<section><button type='button' onclick='reindexDocs()'>Reindex All</button><button type='button' onclick='refreshAdmin()'>Refresh</button><pre id='adminStatus'></pre></section>"
+            "<section><button type='button' onclick='reindexDocs()'>Reindex All</button><button type='button' onclick='refreshAdmin()'>Refresh</button><form method='post' action='/admin/docs/logout' style='display:inline;'><button type='submit'>Logout</button></form><pre id='adminStatus'></pre></section>"
             "<section><table><thead><tr><th>Title</th><th>Slug</th><th>Category</th><th>Status</th><th>Updated</th><th>Source</th></tr></thead><tbody>"
             f"{table_rows}"
             "</tbody></table></section>"

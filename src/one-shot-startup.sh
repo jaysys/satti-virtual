@@ -6,6 +6,15 @@ cd "$ROOT_DIR"
 
 PID_FILE="$ROOT_DIR/run/sattie.pid"
 LOG_FILE="$ROOT_DIR/logs/sattie.log"
+
+if [[ -f "$ROOT_DIR/.env" ]]; then
+  echo "[startup] loading env from $ROOT_DIR/.env"
+  set -a
+  # shellcheck disable=SC1091
+  source "$ROOT_DIR/.env"
+  set +a
+fi
+
 PORT="${PORT:-6001}"
 HOST="${HOST:-0.0.0.0}"
 RELOAD="${RELOAD:-0}"
