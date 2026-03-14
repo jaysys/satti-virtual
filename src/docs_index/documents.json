@@ -6670,6 +6670,490 @@
     "order": 0
   },
   {
+    "slug": "1",
+    "title": "별첨1. 대한민국 직접 수행 위성촬영영상 위성의 공전주기 및 국내 지상국 통신 가능 시각 조사",
+    "summary": "기준일: 2026-03-08",
+    "category": "uploads",
+    "tags": [],
+    "public_url": "/p/1",
+    "updated_at": "2026-03-14T09:55:28Z",
+    "word_count": 1744,
+    "reading_minutes": 7,
+    "source_path": "uploads/docs/국내 위성 통신가능 시각 조사 종합보고서 별첨1_대한민국 직접 수행 위성촬영영상 위성의 공전주기 및 국내 지상국 통신 가능 시각 조사.md",
+    "is_public": true,
+    "headings": [
+      {
+        "level": 2,
+        "text": "목적",
+        "anchor": "document"
+      },
+      {
+        "level": 2,
+        "text": "먼저 결론",
+        "anchor": "document-2"
+      },
+      {
+        "level": 2,
+        "text": "조사 방법과 해석 기준",
+        "anchor": "document-3"
+      },
+      {
+        "level": 3,
+        "text": "1. 공전주기",
+        "anchor": "1"
+      },
+      {
+        "level": 3,
+        "text": "2. 대한민국 지상국과의 통신 가능 시각",
+        "anchor": "2"
+      },
+      {
+        "level": 2,
+        "text": "대한민국 지상국 공개 정보",
+        "anchor": "document-4"
+      },
+      {
+        "level": 2,
+        "text": "위성별 정리표",
+        "anchor": "document-5"
+      },
+      {
+        "level": 2,
+        "text": "위성군별 해석",
+        "anchor": "document-6"
+      },
+      {
+        "level": 3,
+        "text": "1. 아리랑 3호, 3A호",
+        "anchor": "1-3-3a"
+      },
+      {
+        "level": 3,
+        "text": "2. 아리랑 5호",
+        "anchor": "2-5"
+      },
+      {
+        "level": 3,
+        "text": "3. 국토위성 1호(CAS500-1)",
+        "anchor": "3-1-cas500-1"
+      },
+      {
+        "level": 3,
+        "text": "4. 천리안 2A, 2B",
+        "anchor": "4-2a-2b"
+      },
+      {
+        "level": 3,
+        "text": "5. 군 정찰위성 1~5호",
+        "anchor": "5-1-5"
+      },
+      {
+        "level": 2,
+        "text": "정확한 시각을 계산하려면 추가로 필요한 것",
+        "anchor": "document-7"
+      },
+      {
+        "level": 2,
+        "text": "실무적으로 바로 써먹을 수 있는 요약",
+        "anchor": "document-8"
+      },
+      {
+        "level": 2,
+        "text": "출처",
+        "anchor": "document-9"
+      },
+      {
+        "level": 2,
+        "text": "한계",
+        "anchor": "document-10"
+      }
+    ],
+    "order": 0
+  },
+  {
+    "slug": "2-tle",
+    "title": "별첨2. TLE 기반 국내 지상국 통신가능 시각 계산 방법",
+    "summary": "기준일: 2026-03-08",
+    "category": "uploads",
+    "tags": [],
+    "public_url": "/p/2-tle",
+    "updated_at": "2026-03-14T09:55:34Z",
+    "word_count": 1486,
+    "reading_minutes": 6,
+    "source_path": "uploads/docs/국내 위성 통신가능 시각 조사 종합보고서 별첨2_TLE 기반 국내 지상국 통신가능 시각 계산 방법.md",
+    "is_public": true,
+    "headings": [
+      {
+        "level": 2,
+        "text": "목적",
+        "anchor": "document"
+      },
+      {
+        "level": 2,
+        "text": "결론 요약",
+        "anchor": "document-2"
+      },
+      {
+        "level": 2,
+        "text": "1. 왜 TLE만으로 바로 답이 안 나오나",
+        "anchor": "1-tle"
+      },
+      {
+        "level": 2,
+        "text": "2. 기본 용어",
+        "anchor": "2"
+      },
+      {
+        "level": 2,
+        "text": "3. 계산에 필요한 입력값",
+        "anchor": "3"
+      },
+      {
+        "level": 3,
+        "text": "3.1 위성 입력",
+        "anchor": "3-1"
+      },
+      {
+        "level": 3,
+        "text": "3.2 지상국 입력",
+        "anchor": "3-2"
+      },
+      {
+        "level": 3,
+        "text": "3.3 링크/운용 입력",
+        "anchor": "3-3"
+      },
+      {
+        "level": 2,
+        "text": "4. 수학적/기술적 계산 절차",
+        "anchor": "4"
+      },
+      {
+        "level": 3,
+        "text": "4.1 TLE 전파",
+        "anchor": "4-1-tle"
+      },
+      {
+        "level": 2,
+        "text": "4.2 지상국 기준 좌표 변환",
+        "anchor": "4-2"
+      },
+      {
+        "level": 3,
+        "text": "4.3 AOS / LOS 계산",
+        "anchor": "4-3-aos-los"
+      },
+      {
+        "level": 3,
+        "text": "4.4 링크 성립 판단",
+        "anchor": "4-4"
+      },
+      {
+        "level": 2,
+        "text": "5. 정지궤도와 저궤도의 차이",
+        "anchor": "5"
+      },
+      {
+        "level": 3,
+        "text": "5.1 정지궤도(GEO)",
+        "anchor": "5-1-geo"
+      },
+      {
+        "level": 3,
+        "text": "5.2 저궤도(LEO)",
+        "anchor": "5-2-leo"
+      },
+      {
+        "level": 2,
+        "text": "6. 대한민국 위성군에 적용하는 방법",
+        "anchor": "6"
+      },
+      {
+        "level": 3,
+        "text": "6.1 KOMPSAT-3 / 3A",
+        "anchor": "6-1-kompsat-3-3a"
+      },
+      {
+        "level": 3,
+        "text": "6.2 KOMPSAT-5",
+        "anchor": "6-2-kompsat-5"
+      },
+      {
+        "level": 3,
+        "text": "6.3 CAS500-1",
+        "anchor": "6-3-cas500-1"
+      },
+      {
+        "level": 3,
+        "text": "6.4 군 정찰위성 1~5호",
+        "anchor": "6-4-1-5"
+      },
+      {
+        "level": 2,
+        "text": "7. 실제 계산 알고리즘 예시",
+        "anchor": "7"
+      },
+      {
+        "level": 2,
+        "text": "8. downlink 용량까지 함께 계산하는 방법",
+        "anchor": "8-downlink"
+      },
+      {
+        "level": 2,
+        "text": "9. 구현 관점에서 현재 시스템과의 연결",
+        "anchor": "9"
+      },
+      {
+        "level": 2,
+        "text": "10. 실무에서 가장 흔한 오해",
+        "anchor": "10"
+      },
+      {
+        "level": 3,
+        "text": "오해 1. 공전주기가 95분이면 95분마다 한국 지상국과 통신 가능하다",
+        "anchor": "1-95-95"
+      },
+      {
+        "level": 3,
+        "text": "오해 2. 한국 상공 통과 시각이 곧 통신 시각이다",
+        "anchor": "2-2"
+      },
+      {
+        "level": 3,
+        "text": "오해 3. 촬영 시각과 downlink 시각은 같다",
+        "anchor": "3-downlink"
+      },
+      {
+        "level": 3,
+        "text": "오해 4. 정지궤도와 저궤도를 같은 방식으로 패스 계산하면 된다",
+        "anchor": "4-2"
+      },
+      {
+        "level": 2,
+        "text": "11. 이 문서만으로 부족한 부분",
+        "anchor": "11"
+      },
+      {
+        "level": 2,
+        "text": "12. 참고자료",
+        "anchor": "12"
+      }
+    ],
+    "order": 0
+  },
+  {
+    "slug": "3-tle",
+    "title": "별첨3. 국내 지상국 좌표 및 공개 TLE 기반 패스 계산 예시",
+    "summary": "기준일: 2026-03-08",
+    "category": "uploads",
+    "tags": [],
+    "public_url": "/p/3-tle",
+    "updated_at": "2026-03-14T09:55:45Z",
+    "word_count": 1435,
+    "reading_minutes": 6,
+    "source_path": "uploads/docs/국내 위성 통신가능 시각 조사 종합보고서 별첨3_국내 지상국 좌표 및 공개 TLE 기반 패스 계산 예시.md",
+    "is_public": true,
+    "headings": [
+      {
+        "level": 2,
+        "text": "목적",
+        "anchor": "document"
+      },
+      {
+        "level": 2,
+        "text": "주의사항",
+        "anchor": "document-2"
+      },
+      {
+        "level": 2,
+        "text": "1. 계산 입력으로 사용한 국내 지상국 좌표",
+        "anchor": "1"
+      },
+      {
+        "level": 2,
+        "text": "2. 사용한 공개 TLE",
+        "anchor": "2-tle"
+      },
+      {
+        "level": 3,
+        "text": "KOMPSAT-3",
+        "anchor": "kompsat-3"
+      },
+      {
+        "level": 3,
+        "text": "KOMPSAT-3A",
+        "anchor": "kompsat-3a"
+      },
+      {
+        "level": 3,
+        "text": "KOMPSAT-5",
+        "anchor": "kompsat-5"
+      },
+      {
+        "level": 3,
+        "text": "CAS500-1",
+        "anchor": "cas500-1"
+      },
+      {
+        "level": 2,
+        "text": "3. 계산 가정",
+        "anchor": "3"
+      },
+      {
+        "level": 2,
+        "text": "4. 계산 결과",
+        "anchor": "4"
+      },
+      {
+        "level": 3,
+        "text": "4.1 대전추적소 기준",
+        "anchor": "4-1"
+      },
+      {
+        "level": 3,
+        "text": "4.2 제주추적소 기준(표선면 중심 근사)",
+        "anchor": "4-2"
+      },
+      {
+        "level": 2,
+        "text": "5. 읽는 법",
+        "anchor": "5"
+      },
+      {
+        "level": 2,
+        "text": "6. 실무적 해석",
+        "anchor": "6"
+      },
+      {
+        "level": 2,
+        "text": "7. 현재 프로젝트와의 연결",
+        "anchor": "7"
+      },
+      {
+        "level": 2,
+        "text": "8. 한계",
+        "anchor": "8"
+      },
+      {
+        "level": 2,
+        "text": "출처",
+        "anchor": "document-3"
+      }
+    ],
+    "order": 0
+  },
+  {
+    "slug": "document-2",
+    "title": "국내 위성 통신가능 시각 조사 종합보고서",
+    "summary": "기준일: 2026-03-08",
+    "category": "uploads",
+    "tags": [],
+    "public_url": "/p/document-2",
+    "updated_at": "2026-03-14T09:55:17Z",
+    "word_count": 1214,
+    "reading_minutes": 5,
+    "source_path": "uploads/docs/국내 위성 통신가능 시각 조사 종합보고서.md",
+    "is_public": true,
+    "headings": [
+      {
+        "level": 2,
+        "text": "1. 문서 목적",
+        "anchor": "1"
+      },
+      {
+        "level": 2,
+        "text": "2. 문서 체계",
+        "anchor": "2"
+      },
+      {
+        "level": 2,
+        "text": "3. 관련 원문 및 하위 문서",
+        "anchor": "3"
+      },
+      {
+        "level": 2,
+        "text": "4. 조사 범위",
+        "anchor": "4"
+      },
+      {
+        "level": 2,
+        "text": "5. 핵심 결론",
+        "anchor": "5"
+      },
+      {
+        "level": 3,
+        "text": "4.1 궤도 유형 기준으로 두 부류로 나뉜다",
+        "anchor": "4-1"
+      },
+      {
+        "level": 3,
+        "text": "4.2 공전주기 요약",
+        "anchor": "4-2"
+      },
+      {
+        "level": 3,
+        "text": "4.3 국내 지상국 통신 가능 시각 해석",
+        "anchor": "4-3"
+      },
+      {
+        "level": 2,
+        "text": "6. 국내 지상국 기준 해석",
+        "anchor": "6"
+      },
+      {
+        "level": 2,
+        "text": "7. 실제 시각을 계산하는 표준 방법",
+        "anchor": "7"
+      },
+      {
+        "level": 2,
+        "text": "8. 공개 TLE 기반 패스 예시 결과",
+        "anchor": "8-tle"
+      },
+      {
+        "level": 3,
+        "text": "대전추적소 기준 요약",
+        "anchor": "document"
+      },
+      {
+        "level": 3,
+        "text": "제주추적소 기준 요약",
+        "anchor": "document-2"
+      },
+      {
+        "level": 2,
+        "text": "9. 현재 feasibility 시스템 설계와의 연결",
+        "anchor": "9-feasibility"
+      },
+      {
+        "level": 2,
+        "text": "10. 현재 시점에서 확정 가능한 것과 불확정한 것",
+        "anchor": "10"
+      },
+      {
+        "level": 3,
+        "text": "확정 가능",
+        "anchor": "document-3"
+      },
+      {
+        "level": 3,
+        "text": "불확정",
+        "anchor": "document-4"
+      },
+      {
+        "level": 2,
+        "text": "11. 실무 권고",
+        "anchor": "11"
+      },
+      {
+        "level": 2,
+        "text": "12. 결론",
+        "anchor": "12"
+      }
+    ],
+    "order": 0
+  },
+  {
     "slug": "east-up",
     "title": "지도를 90도 돌려보면 무엇이 보일까요? 주한미군 사령관이 제안한 'East-Up' 지도",
     "summary": "최근 유엔사·연합사·주한미군 사령관인 **재비어 브런슨(Gen. Xavier T. Brunson)** 장군이 기고한 칼럼이 화제가 되고 있는데요. 바로 **\"지도를 동쪽이 위로 가게(East-Up) 돌려보라\"**는 제안입니다.",
@@ -6706,6 +7190,202 @@
         "level": 2,
         "text": "결론: 관점의 전환이 가져오는 힘",
         "anchor": "document"
+      }
+    ],
+    "order": 0
+  },
+  {
+    "slug": "document-3",
+    "title": "지상기지국에서 위성으로 영상촬영 요청 후 위성사진 수신까지의 절차 조사",
+    "summary": "기준일: 2026-03-07",
+    "category": "uploads",
+    "tags": [],
+    "public_url": "/p/document-3",
+    "updated_at": "2026-03-14T09:56:25Z",
+    "word_count": 2814,
+    "reading_minutes": 12,
+    "source_path": "uploads/docs/지상기지국에서 위성으로 영상촬영 요청 후 수신까지 절차 조사.md",
+    "is_public": true,
+    "headings": [
+      {
+        "level": 2,
+        "text": "한 줄 결론",
+        "anchor": "document"
+      },
+      {
+        "level": 2,
+        "text": "이 보고서의 범위",
+        "anchor": "document-2"
+      },
+      {
+        "level": 2,
+        "text": "먼저 구분해야 할 것",
+        "anchor": "document-3"
+      },
+      {
+        "level": 3,
+        "text": "1. `업무 요청`과 `위성 커맨드`는 다르다",
+        "anchor": "1"
+      },
+      {
+        "level": 3,
+        "text": "2. `TT&C 링크`와 `영상 데이터 링크`는 보통 분리된다",
+        "anchor": "2-tt-c"
+      },
+      {
+        "level": 3,
+        "text": "3. `지상기지국`도 기능이 나뉜다",
+        "anchor": "3"
+      },
+      {
+        "level": 2,
+        "text": "전체 절차",
+        "anchor": "document-4"
+      },
+      {
+        "level": 3,
+        "text": "1. 촬영 요구 접수",
+        "anchor": "1-2"
+      },
+      {
+        "level": 3,
+        "text": "2. 촬영 가능성(feasibility) 계산",
+        "anchor": "2-feasibility"
+      },
+      {
+        "level": 3,
+        "text": "3. 임무계획 타임라인 생성",
+        "anchor": "3-2"
+      },
+      {
+        "level": 3,
+        "text": "4. 명령 계획(command plan) 생성 및 검증",
+        "anchor": "4-command-plan"
+      },
+      {
+        "level": 3,
+        "text": "5. 텔레커맨드 패킷화와 uplink 준비",
+        "anchor": "5-uplink"
+      },
+      {
+        "level": 3,
+        "text": "6. 지상기지국에서 위성으로 명령 uplink",
+        "anchor": "6-uplink"
+      },
+      {
+        "level": 3,
+        "text": "7. 위성 onboard 검증과 준비",
+        "anchor": "7-onboard"
+      },
+      {
+        "level": 3,
+        "text": "8. 목표 지역 접근과 자세 기동",
+        "anchor": "8"
+      },
+      {
+        "level": 3,
+        "text": "9. 촬영 실행과 onboard 저장",
+        "anchor": "9-onboard"
+      },
+      {
+        "level": 3,
+        "text": "10. downlink 계획에 따라 영상 데이터 송신",
+        "anchor": "10-downlink"
+      },
+      {
+        "level": 3,
+        "text": "11. 지상기지국 수신 처리",
+        "anchor": "11"
+      },
+      {
+        "level": 3,
+        "text": "12. Level 0 -> Level 1 -> Level 2 처리",
+        "anchor": "12-level-0-level-1-level-2"
+      },
+      {
+        "level": 3,
+        "text": "13. 품질검사(QA)와 재처리 판단",
+        "anchor": "13-qa"
+      },
+      {
+        "level": 3,
+        "text": "14. 배포와 사용자 수신",
+        "anchor": "14"
+      },
+      {
+        "level": 2,
+        "text": "절차를 도식으로 보면",
+        "anchor": "document-5"
+      },
+      {
+        "level": 2,
+        "text": "단계별 수행주체 요약",
+        "anchor": "document-6"
+      },
+      {
+        "level": 2,
+        "text": "단계별 수행주체를 한 줄로 정리하면",
+        "anchor": "document-7"
+      },
+      {
+        "level": 2,
+        "text": "임무계획 작성 항목의 부가 설명",
+        "anchor": "document-8"
+      },
+      {
+        "level": 2,
+        "text": "실무적으로 중요한 포인트",
+        "anchor": "document-9"
+      },
+      {
+        "level": 3,
+        "text": "1. `촬영 요청`과 `다운링크 슬롯`은 항상 같이 봐야 한다",
+        "anchor": "1-3"
+      },
+      {
+        "level": 3,
+        "text": "2. `실시간 제어`보다 `사전계획 + 자율실행`이 기본이다",
+        "anchor": "2"
+      },
+      {
+        "level": 3,
+        "text": "3. `지상기지국`은 하나의 안테나가 아니라 시스템이다",
+        "anchor": "3-3"
+      },
+      {
+        "level": 3,
+        "text": "4. 한국 공개 사례도 같은 구조를 따른다",
+        "anchor": "4"
+      },
+      {
+        "level": 2,
+        "text": "한국 위성 유형별 차이",
+        "anchor": "document-10"
+      },
+      {
+        "level": 3,
+        "text": "1. 저궤도 광학/SAR 위성",
+        "anchor": "1-sar"
+      },
+      {
+        "level": 3,
+        "text": "2. 정지궤도 기상위성(GK2A)",
+        "anchor": "2-gk2a"
+      },
+      {
+        "level": 3,
+        "text": "3. 군 정찰위성",
+        "anchor": "3-4"
+      },
+      {
+        "level": 2,
+        "text": "최종 정리",
+        "anchor": "document-11"
+      },
+      {
+        "level": 2,
+        "text": "출처",
+        "anchor": "document-12"
       }
     ],
     "order": 0
