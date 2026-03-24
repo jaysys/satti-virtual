@@ -8,3 +8,5 @@ logs/
 run/
 mock_store/
 .DS_Store
+.md
+
